@@ -1,0 +1,77 @@
+2023-11-09 11:31:40 INFO [com.example.yin.YinMusicApplication]: Starting YinMusicApplication using Java 17.0.3.1 on hlmove with PID 23236 (F:\Code2023\finalCode\music-website\music-server\target\classes started by Hlmove in F:\Code2023\finalCode\music-website)
+2023-11-09 11:31:40 INFO [com.example.yin.YinMusicApplication]: The following profiles are active: dev
+2023-11-09 11:31:40 INFO [org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor]: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-11-09 11:31:40 INFO [org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor]: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-11-09 11:31:42 INFO [org.springframework.boot.web.embedded.tomcat.TomcatWebServer]: Tomcat initialized with port(s): 8888 (http)
+2023-11-09 11:31:42 INFO [org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext]: Root WebApplicationContext: initialization completed in 1655 ms
+2023-11-09 11:31:42 INFO [org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer]: LiveReload server is running on port 35729
+2023-11-09 11:31:43 INFO [org.springframework.boot.web.embedded.tomcat.TomcatWebServer]: Tomcat started on port(s): 8888 (http) with context path ''
+2023-11-09 11:31:43 INFO [com.example.yin.YinMusicApplication]: Started YinMusicApplication in 2.534 seconds (JVM running for 3.221)
+2023-11-09 11:33:40 INFO [org.springframework.web.servlet.DispatcherServlet]: Initializing Servlet 'dispatcherServlet'
+2023-11-09 11:33:40 INFO [org.springframework.web.servlet.DispatcherServlet]: Completed initialization in 1 ms
+2023-11-09 11:33:40 INFO [com.zaxxer.hikari.HikariDataSource]: HikariPool-1 - Starting...
+2023-11-09 11:33:40 INFO [com.zaxxer.hikari.HikariDataSource]: HikariPool-1 - Start completed.
+2023-11-09 11:33:55 WARN [org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver]: Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'consumerId' for method parameter type Long is present but converted to null]
+2023-11-09 11:41:38 INFO [com.zaxxer.hikari.HikariDataSource]: HikariPool-1 - Shutdown initiated...
+2023-11-09 11:41:38 INFO [com.zaxxer.hikari.HikariDataSource]: HikariPool-1 - Shutdown completed.
+2023-11-09 14:09:25 INFO [com.example.yin.YinMusicApplication]: Starting YinMusicApplication using Java 17.0.3.1 on hlmove with PID 23164 (F:\Code2023\finalCode\music-website\music-server\target\classes started by Hlmove in F:\Code2023\finalCode\music-website)
+2023-11-09 14:09:25 INFO [com.example.yin.YinMusicApplication]: The following profiles are active: dev
+2023-11-09 14:09:25 INFO [org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor]: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-11-09 14:09:25 INFO [org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor]: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-11-09 14:09:26 INFO [org.springframework.boot.web.embedded.tomcat.TomcatWebServer]: Tomcat initialized with port(s): 8888 (http)
+2023-11-09 14:09:26 INFO [org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext]: Root WebApplicationContext: initialization completed in 1521 ms
+2023-11-09 14:09:26 INFO [org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer]: LiveReload server is running on port 35729
+2023-11-09 14:09:27 INFO [org.springframework.boot.web.embedded.tomcat.TomcatWebServer]: Tomcat started on port(s): 8888 (http) with context path ''
+2023-11-09 14:09:27 INFO [com.example.yin.YinMusicApplication]: Started YinMusicApplication in 2.327 seconds (JVM running for 2.974)
+2023-11-09 14:10:55 INFO [org.springframework.web.servlet.DispatcherServlet]: Initializing Servlet 'dispatcherServlet'
+2023-11-09 14:10:55 INFO [org.springframework.web.servlet.DispatcherServlet]: Completed initialization in 0 ms
+2023-11-09 14:10:55 INFO [com.zaxxer.hikari.HikariDataSource]: HikariPool-1 - Starting...
+2023-11-09 14:10:55 INFO [com.zaxxer.hikari.HikariDataSource]: HikariPool-1 - Start completed.
+2023-11-09 14:19:18 INFO [com.zaxxer.hikari.HikariDataSource]: HikariPool-1 - Shutdown initiated...
+2023-11-09 14:19:18 INFO [com.zaxxer.hikari.HikariDataSource]: HikariPool-1 - Shutdown completed.
+2023-11-09 14:19:20 INFO [com.example.yin.YinMusicApplication]: Starting YinMusicApplication using Java 17.0.3.1 on hlmove with PID 23480 (F:\Code2023\finalCode\music-website\music-server\target\classes started by Hlmove in F:\Code2023\finalCode\music-website)
+2023-11-09 14:19:20 INFO [com.example.yin.YinMusicApplication]: No active profile set, falling back to default profiles: default
+2023-11-09 14:19:20 INFO [org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor]: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-11-09 14:19:20 INFO [org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor]: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-11-09 14:19:22 INFO [org.springframework.boot.web.embedded.tomcat.TomcatWebServer]: Tomcat initialized with port(s): 8888 (http)
+2023-11-09 14:19:22 INFO [org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext]: Root WebApplicationContext: initialization completed in 1521 ms
+2023-11-09 14:19:22 INFO [org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer]: LiveReload server is running on port 35729
+2023-11-09 14:19:22 INFO [org.springframework.boot.web.embedded.tomcat.TomcatWebServer]: Tomcat started on port(s): 8888 (http) with context path ''
+2023-11-09 14:19:22 INFO [com.example.yin.YinMusicApplication]: Started YinMusicApplication in 2.328 seconds (JVM running for 2.975)
+2023-11-09 14:19:38 INFO [org.springframework.web.servlet.DispatcherServlet]: Initializing Servlet 'dispatcherServlet'
+2023-11-09 14:19:38 INFO [org.springframework.web.servlet.DispatcherServlet]: Completed initialization in 0 ms
+2023-11-09 14:19:38 INFO [com.zaxxer.hikari.HikariDataSource]: HikariPool-1 - Starting...
+2023-11-09 14:19:38 INFO [com.zaxxer.hikari.HikariDataSource]: HikariPool-1 - Start completed.
+2023-11-09 14:47:55 INFO [com.zaxxer.hikari.HikariDataSource]: HikariPool-1 - Shutdown initiated...
+2023-11-09 14:47:55 INFO [com.zaxxer.hikari.HikariDataSource]: HikariPool-1 - Shutdown completed.
+2023-11-09 14:47:59 INFO [com.example.yin.YinMusicApplication]: Starting YinMusicApplication using Java 17.0.3.1 on hlmove with PID 24664 (F:\Code2023\finalCode\music-website\music-server\target\classes started by Hlmove in F:\Code2023\finalCode\music-website)
+2023-11-09 14:47:59 INFO [com.example.yin.YinMusicApplication]: No active profile set, falling back to default profiles: default
+2023-11-09 14:47:59 INFO [org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor]: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-11-09 14:47:59 INFO [org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor]: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-11-09 14:48:00 INFO [org.springframework.boot.web.embedded.tomcat.TomcatWebServer]: Tomcat initialized with port(s): 8888 (http)
+2023-11-09 14:48:00 INFO [org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext]: Root WebApplicationContext: initialization completed in 1467 ms
+2023-11-09 14:48:01 INFO [org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer]: LiveReload server is running on port 35729
+2023-11-09 14:48:01 INFO [org.springframework.boot.web.embedded.tomcat.TomcatWebServer]: Tomcat started on port(s): 8888 (http) with context path ''
+2023-11-09 14:48:01 INFO [com.example.yin.YinMusicApplication]: Started YinMusicApplication in 2.249 seconds (JVM running for 2.863)
+2023-11-09 14:48:08 INFO [org.springframework.web.servlet.DispatcherServlet]: Initializing Servlet 'dispatcherServlet'
+2023-11-09 14:48:08 INFO [org.springframework.web.servlet.DispatcherServlet]: Completed initialization in 1 ms
+2023-11-09 14:48:08 INFO [com.zaxxer.hikari.HikariDataSource]: HikariPool-1 - Starting...
+2023-11-09 14:48:08 WARN [org.springframework.web.servlet.PageNotFound]: No mapping for GET //song/G.E.M.%E9%82%93%E7%B4%AB%E6%A3%8B-%E9%BE%99%E5%8D%B7%E9%A3%8E.mp3
+2023-11-09 14:48:08 INFO [com.zaxxer.hikari.HikariDataSource]: HikariPool-1 - Start completed.
+2023-11-09 14:49:25 INFO [com.zaxxer.hikari.HikariDataSource]: HikariPool-1 - Shutdown initiated...
+2023-11-09 14:49:25 INFO [com.zaxxer.hikari.HikariDataSource]: HikariPool-1 - Shutdown completed.
+2023-11-09 18:25:29 INFO [com.example.yin.YinMusicApplication]: Starting YinMusicApplication using Java 17.0.3.1 on hlmove with PID 18840 (F:\Code2023\finalCode\music-website\music-server\target\classes started by Hlmove in F:\Code2023\finalCode\music-website)
+2023-11-09 18:25:29 INFO [com.example.yin.YinMusicApplication]: No active profile set, falling back to default profiles: default
+2023-11-09 18:25:29 INFO [org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor]: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-11-09 18:25:29 INFO [org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor]: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-11-09 18:25:31 INFO [org.springframework.boot.web.embedded.tomcat.TomcatWebServer]: Tomcat initialized with port(s): 8888 (http)
+2023-11-09 18:25:31 INFO [org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext]: Root WebApplicationContext: initialization completed in 1790 ms
+2023-11-09 18:25:32 INFO [org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer]: LiveReload server is running on port 35729
+2023-11-09 18:25:32 INFO [org.springframework.boot.web.embedded.tomcat.TomcatWebServer]: Tomcat started on port(s): 8888 (http) with context path ''
+2023-11-09 18:25:32 INFO [com.example.yin.YinMusicApplication]: Started YinMusicApplication in 2.683 seconds (JVM running for 3.343)
+2023-11-09 18:25:50 INFO [org.springframework.web.servlet.DispatcherServlet]: Initializing Servlet 'dispatcherServlet'
+2023-11-09 18:25:50 INFO [org.springframework.web.servlet.DispatcherServlet]: Completed initialization in 1 ms
+2023-11-09 18:25:50 INFO [com.zaxxer.hikari.HikariDataSource]: HikariPool-1 - Starting...
+2023-11-09 18:25:51 INFO [com.zaxxer.hikari.HikariDataSource]: HikariPool-1 - Start completed.
+2023-11-09 19:18:36 INFO [com.zaxxer.hikari.HikariDataSource]: HikariPool-1 - Shutdown initiated...
+2023-11-09 19:18:36 INFO [com.zaxxer.hikari.HikariDataSource]: HikariPool-1 - Shutdown completed.
