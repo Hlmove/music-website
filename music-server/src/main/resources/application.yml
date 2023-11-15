@@ -1,45 +1,44 @@
 logging:
-    level:
-        org:
-            springframework:
-                boot:
-                    autoconfigure: ERROR
+  level:
+    org:
+      springframework:
+        boot:
+          autoconfigure: ERROR
 mybatis:
-    mapperLocations: classpath:mapper/*.xml
-    typeAliasesPackage: com.example.yin.model.domain
+  mapperLocations: classpath:mapper/*.xml
+  typeAliasesPackage: com.example.yin.model.domain
 server:
-    port: 8888
-ip : 127.0.0.1
+  port: 8888
+ip: 127.0.0.1
 spring:
-    datasource:
-        driver-class-name: com.mysql.cj.jdbc.Driver
-        password: 2016270225
-        url: jdbc:mysql://localhost:3306/tp_music?serverTimezone=Asia/Shanghai&useSSL=false
-        username: root
-    devtools:
-        restart:
-            additional-paths: src/main/java
-            enabled: false
-            exclude: WEB-INF/**
-    jackson:
-        date-format: yyyy-MM-dd HH:mm:ss
-        time-zone: GMT+8
-    redis:
-        database: 0
-        host: 127.0.0.1
-        lettuce:
-            pool:
-                max-active: 20
-                max-idle: 5
-                max-wait: -1
-                min-idle: 0
-        port: 6379
-        timeout: 1800000
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: 2016270225
+    url: jdbc:mysql://localhost:3306/tp_music?serverTimezone=Asia/Shanghai&useSSL=false
+    username: root
+  devtools:
+    restart:
+      additional-paths: src/main/java
+      enabled: false
+      exclude: WEB-INF/**
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  redis:
+    database: 0
+    host: 127.0.0.1
+    lettuce:
+      pool:
+        max-active: 20
+        max-idle: 5
+        max-wait: -1
+        min-idle: 0
+    port: 6379
+    timeout: 1800000
 sky:
-    tencentcos:
-        secretId:   ${secretId}
-        secretKey:  ${secretKey}
-        rootSrc: https://music-1309454696.cos.ap-nanjing.myqcloud.com
-        bucketAddr: ap-nanjing
-        bucketName: music-1309454696
-        bucketImgName: image
+  tencentcos:
+    secretId: ${secretId}
+    secretKey: ${secretKey}
+    rootSrc: ${rootSrc}
+    bucketAddr: ap-nanjing
+    bucketName: ${bucketName}
