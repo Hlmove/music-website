@@ -37,8 +37,8 @@ spring:
         timeout: 1800000
 sky:
     tencentcos:
-        secretId: AKIDWorvnQp5A4nKhuwmSxEG2ZrtfDVXJq8A
-        secretKey: oMegRv96mBKEtIRM1QYS7WfZDbjcFciY
+        secretId:   ${secretId}
+        secretKey:  ${secretKey}
         rootSrc: https://music-1309454696.cos.ap-nanjing.myqcloud.com
         bucketAddr: ap-nanjing
         bucketName: music-1309454696

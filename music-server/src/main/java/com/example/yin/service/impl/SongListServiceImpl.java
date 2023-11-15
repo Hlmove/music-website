@@ -7,20 +7,20 @@ import com.example.yin.mapper.SongListMapper;
 import com.example.yin.model.domain.SongList;
 import com.example.yin.model.request.SongListRequest;
 import com.example.yin.service.SongListService;
+import com.example.yin.utils.TencentCosUtil;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.File;
-import java.io.IOException;
-
 @Service
 public class SongListServiceImpl extends ServiceImpl<SongListMapper, SongList> implements SongListService {
 
     @Autowired
     private SongListMapper songListMapper;
+    @Autowired
+    private TencentCosUtil tencentCosUtil;
 
     @Override
     public R updateSongListMsg(SongListRequest updateSongListRequest) {
@@ -50,14 +50,14 @@ public class SongListServiceImpl extends ServiceImpl<SongListMapper, SongList> i
     @Override
     public R likeTitle(String title) {
         QueryWrapper<SongList> queryWrapper = new QueryWrapper<>();
-        queryWrapper.like("title",title);
+        queryWrapper.like("title", title);
         return R.success(null, songListMapper.selectList(queryWrapper));
     }
 
     @Override
     public R likeStyle(String style) {
         QueryWrapper<SongList> queryWrapper = new QueryWrapper<>();
-        queryWrapper.like("style",style);
+        queryWrapper.like("style", style);
         return R.success(null, songListMapper.selectList(queryWrapper));
     }
 
@@ -77,18 +77,19 @@ public class SongListServiceImpl extends ServiceImpl<SongListMapper, SongList> i
     @Override
     public R updateSongListImg(MultipartFile avatorFile, @RequestParam("id") int id) {
         String fileName = System.currentTimeMillis() + avatorFile.getOriginalFilename();
-        String filePath = System.getProperty("user.dir") + System.getProperty("file.separator") + "img" + System.getProperty("file.separator") + "songListPic";
-        File file1 = new File(filePath);
-        if (!file1.exists()) {
-            file1.mkdir();
-        }
-        File dest = new File(filePath + System.getProperty("file.separator") + fileName);
+//        String filePath = System.getProperty("user.dir") + System.getProperty("file.separator") + "img" + System.getProperty("file.separator") + "songListPic";
+//        File file1 = new File(filePath);
+//        if (!file1.exists()) {
+//            file1.mkdir();
+//        }
+//        File dest = new File(filePath + System.getProperty("file.separator") + fileName);
         String imgPath = "/img/songListPic/" + fileName;
-        try {
-            avatorFile.transferTo(dest);
-        } catch (IOException e) {
-            return R.fatal("上传失败" + e.getMessage());
-        }
+        tencentCosUtil.upLoadFile(avatorFile,imgPath);
+//        try {
+//            avatorFile.transferTo(dest);
+//        } catch (IOException e) {
+//            return R.fatal("上传失败" + e.getMessage());
+//        }
         SongList songList = new SongList();
         songList.setId(id);
         songList.setPic(imgPath);

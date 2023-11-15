@@ -7,19 +7,19 @@ import com.example.yin.mapper.SingerMapper;
 import com.example.yin.model.domain.Singer;
 import com.example.yin.model.request.SingerRequest;
 import com.example.yin.service.SingerService;
+import com.example.yin.utils.TencentCosUtil;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
-
-import java.io.File;
-import java.io.IOException;
 
 @Service
 public class SingerServiceImpl extends ServiceImpl<SingerMapper, Singer> implements SingerService {
 
     @Autowired
     private SingerMapper singerMapper;
+    @Autowired
+    private TencentCosUtil tencentCosUtil;
 
     @Override
     public R updateSingerMsg(SingerRequest updateSingerRequest) {
@@ -35,20 +35,21 @@ public class SingerServiceImpl extends ServiceImpl<SingerMapper, Singer> impleme
     @Override
     public R updateSingerPic(MultipartFile avatorFile, int id) {
         String fileName = System.currentTimeMillis() + avatorFile.getOriginalFilename();
-        String filePath = System.getProperty("user.dir") + System.getProperty("file.separator") + "img"
-                + System.getProperty("file.separator") + "singerPic";
-        File file1 = new File(filePath);
-        if (!file1.exists()) {
-            file1.mkdir();
-        }
-
-        File dest = new File(filePath + System.getProperty("file.separator") + fileName);
+//        String filePath = System.getProperty("user.dir") + System.getProperty("file.separator") + "img"
+//                + System.getProperty("file.separator") + "singerPic";
+//        File file1 = new File(filePath);
+//        if (!file1.exists()) {
+//            file1.mkdir();
+//        }
+//
+//        File dest = new File(filePath + System.getProperty("file.separator") + fileName);
         String imgPath = "/img/singerPic/" + fileName;
-        try {
-            avatorFile.transferTo(dest);
-        } catch (IOException e) {
-            return R.fatal("上传失败" + e.getMessage());
-        }
+        tencentCosUtil.upLoadFile(avatorFile,imgPath);
+//        try {
+//            avatorFile.transferTo(dest);
+//        } catch (IOException e) {
+//            return R.fatal("上传失败" + e.getMessage());
+//        }
         Singer singer = new Singer();
         singer.setId(id);
         singer.setPic(imgPath);
