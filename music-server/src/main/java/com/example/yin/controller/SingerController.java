@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 @RestController
+@RequestMapping("/singer")
 public class SingerController {
 
     @Autowired
@@ -15,43 +16,43 @@ public class SingerController {
 
 
     // 添加歌手
-    @PostMapping("/singer/add")
+    @PostMapping("/add")
     public R addSinger(@RequestBody SingerRequest addSingerRequest) {
         return singerService.addSinger(addSingerRequest);
     }
 
     // 删除歌手
-    @DeleteMapping("/singer/delete")
+    @DeleteMapping("/delete")
     public R deleteSinger(@RequestParam int id) {
         return singerService.deleteSinger(id);
     }
 
     // 返回所有歌手
-    @GetMapping("/singer")
+    @GetMapping
     public R allSinger() {
         return singerService.allSinger();
     }
 
     // 根据歌手名查找歌手
-    @GetMapping("/singer/name/detail")
+    @GetMapping("/name/detail")
     public R singerOfName(@RequestParam String name) {
         return singerService.singerOfName(name);
     }
 
     // 根据歌手性别查找歌手
-    @GetMapping("/singer/sex/detail")
+    @GetMapping("/sex/detail")
     public R singerOfSex(@RequestParam int sex) {
         return singerService.singerOfSex(sex);
     }
 
     // 更新歌手信息
-    @PostMapping("/singer/update")
+    @PostMapping("/update")
     public R updateSingerMsg(@RequestBody SingerRequest updateSingerRequest) {
         return singerService.updateSingerMsg(updateSingerRequest);
     }
 
     // 更新歌手头像
-    @PostMapping("/singer/avatar/update")
+    @PostMapping("/avatar/update")
     public R updateSingerPic(@RequestParam("file") MultipartFile avatorFile, @RequestParam("id") int id) {
         return singerService.updateSingerPic(avatorFile, id);
     }
