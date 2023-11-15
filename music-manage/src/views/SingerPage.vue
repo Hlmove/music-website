@@ -186,7 +186,7 @@ export default defineComponent({
       currentPage.value = val;
     }
     function uploadUrl(id) {
-      return HttpManager.attachImageUrl(`/singer/avatar/update?id=${id}`);
+      return HttpManager.addImageUrl(`/singer/avatar/update?id=${id}`);
     }
 
     /**

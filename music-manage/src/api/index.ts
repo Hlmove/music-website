@@ -1,8 +1,9 @@
-import {deletes, get, getBaseURL, post} from './request'
+import {deletes, get, getBaseURL, getImgURL, post} from './request'
 
 const HttpManager = {
     // 获取图片信息
-    attachImageUrl: (url) => `${getBaseURL()}/${url}`,
+    attachImageUrl: (url) => `${getImgURL()}${url}`,
+    addImageUrl: (url) => `${getBaseURL()}${url}`,
     // =======================> 管理员 API 完成
     // 是否登录成功
     getLoginStatus: ({username, password}) => post(`admin/login/status`, {username, password}),

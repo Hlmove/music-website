@@ -281,7 +281,7 @@ export default defineComponent({
           }
         }
       };
-      req.open("post", HttpManager.attachImageUrl(`/song/add`), false);
+      req.open("post", HttpManager.addImageUrl(`/song/add`), false);
       req.send(addSongForm);
       centerDialogVisible.value = false;
     }

@@ -7,13 +7,12 @@ import com.example.yin.mapper.SongMapper;
 import com.example.yin.model.domain.Song;
 import com.example.yin.model.request.SongRequest;
 import com.example.yin.service.SongService;
+import com.example.yin.utils.TencentCosUtil;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.Date;
 
 @Service
@@ -21,6 +20,8 @@ public class SongServiceImpl extends ServiceImpl<SongMapper, Song> implements So
 
     @Autowired
     private SongMapper songMapper;
+    @Autowired
+    private TencentCosUtil tencentCosUtil;
 
     @Override
     public R allSong() {
@@ -33,20 +34,23 @@ public class SongServiceImpl extends ServiceImpl<SongMapper, Song> implements So
         BeanUtils.copyProperties(addSongRequest, song);
         String pic = "/img/songPic/tubiao.jpg";
         String fileName = mpfile.getOriginalFilename();
-        String filePath = System.getProperty("user.dir") + System.getProperty("file.separator") + "song";
-        File file1 = new File(filePath);
-        if (!file1.exists()) {
-            if (!file1.mkdir()) {
-                return R.fatal("创建文件失败");
-            }
-        }
-        File dest = new File(filePath + System.getProperty("file.separator") + fileName);
+//        String fileName = mpfile.getOriginalFilename();
+//        String filePath = System.getProperty("user.dir") + System.getProperty("file.separator") + "song";
+//        File file1 = new File(filePath);
+//        if (!file1.exists()) {
+//            if (!file1.mkdir()) {
+//                return R.fatal("创建文件失败");
+//            }
+//        }
+//        File dest = new File(filePath + System.getProperty("file.separator") + fileName);
+//        String storeUrlPath = "/song/" + fileName;
+//        try {
+//            mpfile.transferTo(dest);
+//        } catch (IOException e) {
+//            return R.fatal("上传失败" + e.getMessage());
+//        }
         String storeUrlPath = "/song/" + fileName;
-        try {
-            mpfile.transferTo(dest);
-        } catch (IOException e) {
-            return R.fatal("上传失败" + e.getMessage());
-        }
+        tencentCosUtil.upLoadFile(mpfile, storeUrlPath);
         song.setCreateTime(new Date());
         song.setUpdateTime(new Date());
         song.setPic(pic);
@@ -72,20 +76,22 @@ public class SongServiceImpl extends ServiceImpl<SongMapper, Song> implements So
     @Override
     public R updateSongUrl(MultipartFile urlFile, int id) {
         String fileName = urlFile.getOriginalFilename();
-        String filePath = System.getProperty("user.dir") + System.getProperty("file.separator") + "song";
-        File file1 = new File(filePath);
-        if (!file1.exists()) {
-            if (!file1.mkdir()) {
-                return R.fatal("创建目的文件夹失败");
-            }
-        }
-        File dest = new File(filePath + System.getProperty("file.separator") + fileName);
+//        String filePath = System.getProperty("user.dir") + System.getProperty("file.separator") + "song";
+//        File file1 = new File(filePath);
+//        if (!file1.exists()) {
+//            if (!file1.mkdir()) {
+//                return R.fatal("创建目的文件夹失败");
+//            }
+//        }
+//        File dest = new File(filePath + System.getProperty("file.separator") + fileName);
         String storeUrlPath = "/song/" + fileName;
-        try {
-            urlFile.transferTo(dest);
-        } catch (IOException e) {
-            return R.fatal("更新失败" + e.getMessage());
-        }
+        tencentCosUtil.upLoadFile(urlFile, storeUrlPath);
+
+//        try {
+//            urlFile.transferTo(dest);
+//        } catch (IOException e) {
+//            return R.fatal("更新失败" + e.getMessage());
+//        }
         Song song = new Song();
         song.setId(id);
         song.setUrl(storeUrlPath);
@@ -99,21 +105,22 @@ public class SongServiceImpl extends ServiceImpl<SongMapper, Song> implements So
     @Override
     public R updateSongPic(MultipartFile urlFile, int id) {
         String fileName = System.currentTimeMillis() + urlFile.getOriginalFilename();
-        String filePath = System.getProperty("user.dir") + System.getProperty("file.separator") + "img" + System.getProperty("file.separator") + "songPic";
-        File file1 = new File(filePath);
-        if (!file1.exists()) {
-            if (!file1.mkdir()) {
-                return R.fatal("创建文件夹失败");
-            }
-        }
+//        String filePath = System.getProperty("user.dir") + System.getProperty("file.separator") + "img" + System.getProperty("file.separator") + "songPic";
+//        File file1 = new File(filePath);
+//        if (!file1.exists()) {
+//            if (!file1.mkdir()) {
+//                return R.fatal("创建文件夹失败");
+//            }
+//        }
 
-        File dest = new File(filePath + System.getProperty("file.separator") + fileName);
+//        File dest = new File(filePath + System.getProperty("file.separator") + fileName);
         String storeUrlPath = "/img/songPic/" + fileName;
-        try {
-            urlFile.transferTo(dest);
-        } catch (IOException e) {
-            return R.fatal("上传失败" + e.getMessage());
-        }
+        tencentCosUtil.upLoadFile(urlFile, storeUrlPath);
+//        try {
+//            urlFile.transferTo(dest);
+//        } catch (IOException e) {
+//            return R.fatal("上传失败" + e.getMessage());
+//        }
         Song song = new Song();
         song.setId(id);
         song.setPic(storeUrlPath);
@@ -136,21 +143,21 @@ public class SongServiceImpl extends ServiceImpl<SongMapper, Song> implements So
     @Override
     public R songOfSingerId(Integer singerId) {
         QueryWrapper<Song> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("singer_id",singerId);
+        queryWrapper.eq("singer_id", singerId);
         return R.success(null, songMapper.selectList(queryWrapper));
     }
 
     @Override
     public R songOfId(Integer id) {
         QueryWrapper<Song> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("id",id);
+        queryWrapper.eq("id", id);
         return R.success(null, songMapper.selectList(queryWrapper));
     }
 
     @Override
     public R songOfSingerName(String name) {
         QueryWrapper<Song> queryWrapper = new QueryWrapper<>();
-        queryWrapper.like("name",name);
+        queryWrapper.like("name", name);
         return R.success(null, songMapper.selectList(queryWrapper));
     }
 }

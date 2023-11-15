@@ -1,8 +1,8 @@
-import { getBaseURL, get, post, deletes } from "./request";
+import {getBaseURL, get, post, deletes, getImgURL} from "./request";
 
 const HttpManager = {
   // 获取图片信息
-  attachImageUrl: (url) => url ? `${getBaseURL()}/${url}` : "https://cube.elemecdn.com/e/fd/0fc7d20532fdaf769a25683617711png.png",
+  attachImageUrl: (url) => url ? `${getImgURL()}/${url}` : "https://cube.elemecdn.com/e/fd/0fc7d20532fdaf769a25683617711png.png",
   // =======================> 用户 API 完成
   // 登录
   signIn: ({username,password}) => post(`user/login/status`, {username,password}),

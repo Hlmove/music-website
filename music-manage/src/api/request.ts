@@ -58,9 +58,11 @@ axios.interceptors.response.use(
 )
 
 export function getBaseURL() {
+  return BASE_URL;
+}
+export function getImgURL() {
   return IMG_URL;
 }
-
 /**
  * 封装get方法
  * @param url
