@@ -5,6 +5,7 @@ import com.example.yin.utils.Result.ResultCode;
 
 /**
  * 自定义service层异常类
+ * @author Hlmove
  */
 public class ServiceException extends RuntimeException {
 
