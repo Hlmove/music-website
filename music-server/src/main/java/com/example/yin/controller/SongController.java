@@ -3,6 +3,7 @@ package com.example.yin.controller;
 import com.example.yin.common.R;
 import com.example.yin.model.request.SongRequest;
 import com.example.yin.service.SongService;
+import com.example.yin.utils.Result.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.servlet.MultipartConfigFactory;
 import org.springframework.context.annotation.Bean;
@@ -31,6 +32,12 @@ public class SongController {
         return factory.createMultipartConfig();
     }
 
+//下载歌曲
+    @GetMapping("{url}")
+    public Result downloadSong(@PathVariable String url){
+        return
+        Result.success();
+    }
 
     // 添加歌曲
     @PostMapping("/add")

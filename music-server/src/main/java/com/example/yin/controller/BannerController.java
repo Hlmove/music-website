@@ -1,7 +1,7 @@
 package com.example.yin.controller;
 
-import com.example.yin.common.R;
 import com.example.yin.service.BannerService;
+import com.example.yin.utils.Result.Result;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,7 +20,8 @@ public class BannerController {
 
 
     @GetMapping("/getAllBanner")
-    public R getAllBanner() {
-        return R.success("成功获取轮播图与", bannerService.getAllBanner());
+    public Result getAllBanner() {
+//        return R.success("成功获取轮播图与", bannerService.getAllBanner());
+        return Result.success(bannerService.getAllBanner());
     }
 }

@@ -6,7 +6,7 @@
     </el-aside>
     <el-main class="album-main">
       <h1>简介</h1>
-      <p>{{ songDetails.introduction }}</p>
+      <p>{{ songDetails.introduction}}</p>
       <!--评分-->
       <div class="album-score">
         <div>
@@ -75,7 +75,7 @@ export default defineComponent({
       const result = (await HttpManager.getUserRank(userId, songListId)) as ResponseBody;
       nowScore.value = result.data / 2;
       disabledRank.value = true;
-      assistText.value = "已评价";
+      assistText.value = "你的评价";
     }
     // 提交评分
     async function pushValue() {
@@ -95,7 +95,7 @@ export default defineComponent({
         if (result.success) {
           getRank(nowSongListId.value);
           disabledRank.value = true;
-          assistText.value = "已评价";
+          assistText.value = "你的评价";
         }
       } catch (error) {
         console.error(error);

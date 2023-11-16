@@ -36,13 +36,18 @@ public class RankListServiceImpl extends ServiceImpl<RankListMapper, RankList> i
     public R rankOfSongListId(Long songListId) {
         // 评分总人数如果为 0，则返回0；否则返回计算出的结果
         QueryWrapper<RankList> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("song_list_id",songListId);
+        queryWrapper.eq("song_list_id", songListId);
         Long rankNum = rankMapper.selectCount(queryWrapper);
         return R.success(null, (rankNum <= 0) ? 0 : rankMapper.selectScoreSum(songListId) / rankNum);
     }
 
     @Override
     public R getUserRank(Long consumerId, Long songListId) {
-        return R.success(null, rankMapper.selectUserRank(consumerId, songListId));
+        Object rank = rankMapper.selectUserRank(consumerId, songListId);
+        System.out.println("rank = " + rank.getClass());
+        if (!(rank instanceof Long)) {
+            rank = 0;
+        }
+        return R.success(null, rank);
     }
 }
