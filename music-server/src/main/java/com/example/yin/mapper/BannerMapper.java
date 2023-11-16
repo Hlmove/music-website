@@ -2,6 +2,7 @@ package com.example.yin.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.example.yin.model.domain.Banner;
+import org.springframework.stereotype.Repository;
 
 /**
 * @author asus
@@ -9,6 +10,7 @@ import com.example.yin.model.domain.Banner;
 * @createDate 2022-06-13 13:13:42
 * @Entity generator.domain.Banner
 */
+@Repository
 public interface BannerMapper extends BaseMapper<Banner> {
 
 

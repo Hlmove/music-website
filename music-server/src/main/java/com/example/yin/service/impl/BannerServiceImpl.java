@@ -25,7 +25,6 @@ public class BannerServiceImpl extends ServiceImpl<BannerMapper, Banner>
     @Cacheable(value = "banner", key = "'list'")  //放在缓存中 redis 是以key-value进行存储的
     @Override
     public List<Banner> getAllBanner() {
-        System.out.println("没有走缓存");
         return bannerMapper.selectList(null);
     }
 }
