@@ -10,19 +10,23 @@ public class Result implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private Integer code;
-	private String msg;
+	private String message;
+
+	private String type;
+
+	private Boolean success;
 	private Object data;
 
 	public Result() {}
 
-	public Result(Integer code, String msg) {
+	public Result(Integer code, String message) {
 		this.code = code;
-		this.msg = msg;
+		this.message = message;
 	}
 
 	private void setResultCode(ResultCode code) {
 		this.code = code.code();
-		this.msg = code.message();
+		this.message = code.message();
 	}
 
 	/**
@@ -31,6 +35,8 @@ public class Result implements Serializable {
 	public static Result success() {
 		Result result = new Result();
 		result.setResultCode(ResultCode.SUCCESS);
+		result.setSuccess(true);
+		result.setType("success");
 		return result;
 	}
 
@@ -50,6 +56,8 @@ public class Result implements Serializable {
 	public static Result failure(ResultCode resultCode) {
 		Result result = new Result();
 		result.setResultCode(resultCode);
+		result.setSuccess(false);
+		result.setType("error");
 		return result;
 	}
 
@@ -59,6 +67,8 @@ public class Result implements Serializable {
 	public static Result failure(ResultCode resultCode, Object data) {
 		Result result = new Result();
 		result.setResultCode(resultCode);
+		result.setSuccess(false);
+		result.setType("error");
 		result.setData(data);
 		return result;
 	}
@@ -79,12 +89,12 @@ public class Result implements Serializable {
 		this.code = code;
 	}
 
-	public String getMsg() {
-		return msg;
+	public String getMessage() {
+		return message;
 	}
 
-	public void setMsg(String msg) {
-		this.msg = msg;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Object getData() {
@@ -95,4 +105,19 @@ public class Result implements Serializable {
 		this.data = data;
 	}
 
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public Boolean getSuccess() {
+		return success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
 }

@@ -20,6 +20,7 @@ import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.util.List;
 
 import static com.example.yin.constant.Constants.SALT;
 
@@ -147,8 +148,8 @@ public class ConsumerServiceImpl extends ServiceImpl<ConsumerMapper, Consumer>
     }
 
     @Override
-    public R allUser() {
-        return R.success(null, consumerMapper.selectList(null));
+    public List<Consumer> allUser() {
+        return consumerMapper.selectList(null);
     }
 
     @Override

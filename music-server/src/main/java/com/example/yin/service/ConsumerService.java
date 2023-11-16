@@ -7,6 +7,7 @@ import com.example.yin.model.request.ConsumerRequest;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 public interface ConsumerService extends IService<Consumer> {
 
@@ -24,7 +25,7 @@ public interface ConsumerService extends IService<Consumer> {
 
     R deleteUser(Integer id);
 
-    R allUser();
+    List<Consumer> allUser();
 
     R userOfId(Integer id);
 
